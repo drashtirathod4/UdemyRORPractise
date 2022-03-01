@@ -1,0 +1,24 @@
+<center>
+    <h1>Add new Article</h1>
+    <%if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+            <p style = "color:red"><%= error %></p>
+        <%end%>
+    <%end%>
+
+    <%= form_with scope: :my_article, url: my_articles_path, local: true do |f| %>
+        <p>
+            <%= f.label :title %><br/>
+            <%= f.text_field :title %>
+        </p>
+
+        <p>
+            <%= f.label :description %><br/>
+            <%= f.text_area :description %>
+        </p>
+
+        <p>
+            <%= f.submit %>
+        </p>
+    <% end %>
+</center>

@@ -1,0 +1,22 @@
+<center>
+    <h1>List of Articles</h1>
+    <table cellpadding = "20px">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @articles.each do |article| %>
+                <tr>
+                    <td><%= article.title %></td>
+                    <td><%= article.description %></td>
+                    <td><%=  %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</center>
