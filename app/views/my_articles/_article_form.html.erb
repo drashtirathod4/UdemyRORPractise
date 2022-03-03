@@ -1,0 +1,25 @@
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <p style = "color:red"><%= error %></p>
+    <% end %>
+<% end %>
+  
+<%= form_for @article do |form| %>
+    <h2><%= @article.title %></h2>
+    <table cellpadding="15px" class="table">
+        <tr>
+            <td><%= form.label :title %></td>
+            <td><%= form.text_field :title %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :description %></td>
+            <td><%= form.text_area :description %></td>
+        </tr>
+        <tr>
+            <td><%= form.submit %></td>
+        </tr>
+        <tr>
+            <td><b><%= link_to "Back", my_articles_path %></b></td>
+        </tr>
+    </table>
+<% end %>

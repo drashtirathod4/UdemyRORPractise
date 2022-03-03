@@ -1,0 +1,25 @@
+<center>
+    <h1>List of Articles</h1><br>
+    <table class="table table-striped">
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Remove</th>
+        </tr>
+        <% @articles.each do |article| %>
+            <tr>
+                <td><b><%= article.title %></b></td>
+                <td><%= article.description %></td>
+                <td><%= button_to "View", my_article_path(article), method: :get %></td>
+                <td><%= button_to "Edit", edit_my_article_path(article), method: :get %></td>
+                <td><%= button_to "Remove", my_article_path(article), method: 'delete' %></td>
+            </tr>
+        <% end %>
+        <tr>
+            <td colspan="7" align="center"><%= button_to "Add new article", new_my_article_path, method: :get %></td>
+        </tr>
+    </table><br>
+    <b><%= link_to "Back to Home Page", root_path, method: :get %></b>
+</center>
